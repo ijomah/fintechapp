@@ -11,6 +11,8 @@
     <meta name="color-scheme" content="light dark">
 
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="transition.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js" id="cordova-jquery"></script>
     <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -24,15 +26,87 @@
     </header>
     <div class="app">
         <div id="deviceready">
-            <h2>My First Cordova App</h2>
-            <button id="hellobutton">Change Name Row 1</button>
-            <button id="hellobutton">Change Name Row 2</button>
-            <p id="hellop">
-                <button id="button1">Sign in</button>
-            <p id="text1"></p>
-            <div>
+            <!-- <h2>My First Cordova App</h2> -->
+            <!-- <button id="hellobutton">Change Name Row 1</button>
+            <button id="hellobutton">Change Name Row 2</button> -->
+            <!---1------Home screen 1-->
+            <div data-role="page" class="page first-home-screen">
+                <div class="bg-img-container">
+                    <button ui-icon-arrow-1>
+                        <a href="#login-pg">Next</a>
+                    </button>
+                </div>
+            </div>
+            <div id="login-pg" data-role="page">
+                <div data-role="header">
+                    <p>TALO BANKING</p>
+                </div>
+                <div role="main" class="ui-content">
+                    <div>
+                        <div>
+                            <label for="text-basic">User Name:</label>
+                            <input type="text" name="text-basic" id="text-basic" value="">
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" value="" autocomplete="off">
+                        </div>
+                    </div>
+                    <p id="hellop">
+                        <button id="button1"><a href="#bank-list">Sign in</a></button>
+
+                    <p id="text1"></p>
+                </div>
+                <div data-role="footer">
+                    <p>2024 (c)</p>
+                </div>
+            </div>
+
+            <div id="bank-list">
+                <button id="btnget">Get Bank List</button>
+                <p id="infobox"></p>
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..."
+                    data-inset="true">
+                    <li data-role="list-divider">BANK LIST</li>
+                        <li><a href="#account-list">Apple</a></li>
+                        <li><a href="#account-list">Banana</a></li>
+                        <li><a href="#account-list">Cherry</a></li>
+                        <li><a href="#account-list">Cranberry</a></li>
+                        <li><a href="#account-list">Grape</a></li>
+                        <li><a href="#account-list">Orange</a></li>
+                </ul>
+            </div>
+
+            <!-- Account List -->
+            <div id="account-list">
                 <button id="btnget">Get Data</button>
                 <p id="infobox"></p>
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..."
+                    data-inset="true">
+                    <li data-role="list-divider">ACCOUNT LIST</li>
+                        <li><a href="#transaction-list">Apple</a></li>
+                        <li><a href="#transaction-list">Banana</a></li>
+                        <li><a href="#transaction-list">Cherry</a></li>
+                        <li><a href="#transaction-list">Cranberry</a></li>
+                        <li><a href="#transaction-list">Grape</a></li>
+                        <li><a href="#transaction-list">Orange</a></li>
+                </ul>
+            </div>
+
+            <!-- Transactions List -->
+            <div id="transaction-list">
+                <button id="btnget">Get Data</button>
+                <p id="infobox"></p>
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..."
+                    data-inset="true">
+                    <li data-role="list-divider">TRANSACTION LIST</li>
+                        <li><a href="">Apple</a></li>
+                        <li><a href="">Banana</a></li>
+                        <li><a href="">Cherry</a></li>
+                        <li><a href="">Cranberry</a></li>
+                        <li><a href="">Grape</a></li>
+                        <li><a href="#">Orange</a></li>
+                </ul>
             </div>
             <table data-column-btn-text="Hide/Unhide Columns" data-role="table" data-mode="columntoggle"
                 id="account-table" class="ui-responsive table-stripe">
@@ -72,7 +146,8 @@
             <a href="index2.html">Click for more information</a>
         </button>
     </div>
-    <footer data-position="fixed">
+    <footer data-role="footer">
+        <!-- data-position="fixed" -->
         <p>Footer Text</p>
     </footer>
     <script src="cordova.js"></script>

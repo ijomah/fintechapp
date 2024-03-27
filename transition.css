@@ -1,0 +1,27 @@
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.5s ease forwards; /* Use CSS animation */
+}
+.fade-out {
+    opacity: 0;
+    animation: fadeInAnimation 0.5s ease reverse; /* Use CSS animation */
+}
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes slideInAnimation {
+    to{
+        transform: translateX(-100vw);
+    }
+}
+.slide-in{
+    animation: slideInAnimation 0.4s ease-in forwards;
+}

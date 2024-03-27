@@ -1,0 +1,515 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  background: #ffffff;
+  position: fixed;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.content-container {
+  padding: 0;
+  /* height:; */
+  /* width:; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  overflow: hidden;
+  transition: scroll 0.3s ease-in;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.page {
+  flex-shrink: 0;
+  transition: 0.2s ease-in;
+  transition: scroll 0.6s ease-in;
+  color: #2a2a2a;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-margin: 0px;
+}
+.first-home-screen {
+  background: #d9d9d9;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /* display: ; */
+}
+.bg-img-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  background-size: cover;
+  animation: fadeInAnimations 4s ease forwards; /* Use CSS animation */
+}
+@keyframes fadeInAnimations {
+  from {
+    background-image: url("img/WELCOME-PAGE121.jpg");
+  }
+  to {
+    background-image: url("img/WELCOME-PAGEbanker.jpg");
+  }
+}
+/*caption*/
+.home-screen-with-caption {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  max-width: 500px;
+  /* overflow: ; */
+  padding: 0;
+  display: none;
+}
+.best {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-size: 36px;
+  color: #ffffff;
+}
+.way {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 25%;
+  bottom: 21%;
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-size: 54px;
+  color: #88c437;
+}
+.to {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 18%;
+  left: 24%;
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-size: 36px;
+  color: #ffffff;
+}
+.bank {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 30%;
+  bottom: 15%;
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-size: 64px;
+  color: #88c437;
+}
+
+/**************sign-in page******************/
+.sign-in-page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 17px 0;
+  box-sizing: border-box;
+  /* position:; */
+  width: 100vw;
+  height: 100vh;
+  /* display:; */
+  /* right:; */
+}
+.lets-get-you-inside {
+  margin: 7vh 1px 12px 0;
+  display: block;
+  overflow-wrap: break-word;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #000000;
+  background: rgba(7, 7, 7, 0);
+}
+.sign-in-name-container {
+  border-radius: 10px;
+  background: #d9d9d9;
+  position: relative;
+  margin-bottom: 16px;
+  /* margin-top:; */
+  padding: 15px 27px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+.sign-in-name {
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #00000000;
+  height: 30px;
+  text-transform: capitalize;
+  transition: border 0.2s ease-in;
+  max-width: 500px;
+}
+.sign-in-password-container {
+  border-radius: 10px;
+  background: #d9d9d9;
+  position: relative;
+  margin-bottom: 46px;
+  padding: 15px 27px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+.sign-in-password {
+  overflow-wrap: break-word;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #00000000;
+  height: 30px;
+  transition: border 0.2s ease-in;
+}
+.name:focus,
+.pasword:focus {
+  border-bottom: 1px solid #000000;
+  transition: border 0.5s ease-in;
+}
+.login {
+  overflow-wrap: break-word;
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+}
+.login-container,
+.next-container {
+  border-radius: 10px;
+  background: #88c437;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 11px 0 11px 1px;
+  width: 200px;
+  box-sizing: border-box;
+}
+.login-error-container {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ff0000;
+  position: relative;
+  display: none;
+}
+.login-error {
+}
+/***************Bank List Page*************/
+
+.bank-list-page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 0;
+  box-sizing: border-box;
+  /* position: ; */
+  height: 100vh;
+  width: 100vw;
+  /* display:; */
+}
+.available-banks {
+  align-self: center;
+  overflow-wrap: break-word;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  color: #88c437;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+.bank-logo {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+}
+.bank-names {
+  margin: 20px 0 19px 20px;
+  /* display: ; */
+  overflow-wrap: break-word;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+}
+.bank-card {
+  border-radius: 10px;
+  background: #d9d9d9;
+  position: relative;
+  margin: 10px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 13px 0 14px 14.9px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.next {
+  overflow-wrap: break-word;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+}
+.next-container {
+  opacity: 0.6;
+}
+.next-container-enabled {
+  opacity: 1;
+}
+.select-bank {
+  margin: 0 6.3px 9px 6.3px;
+  display: block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+}
+.select-bank-name {
+  outline: none;
+  border: none;
+  width: 200px;
+  background: none;
+  border-bottom: 0.5px solid black;
+  padding-bottom: 5px;
+}
+
+.container-select-bank {
+  border-radius: 10px;
+  background: #d9d9d9;
+  position: relative;
+  margin: 0 0 38px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 28px 18px 26px;
+  width: calc(100% - 2px);
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+/*********************Bank Page*************/
+
+.bank-page {
+  background: #ffffff;
+  /* position: ; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 73px 16px 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  /* display:; */
+  overflow: hidden;
+}
+.page-header {
+  background: #d9d9d9;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 16px 0 16px 22px;
+  width: 100vw;
+  max-width: 500px;
+  height: 50px;
+  box-sizing: border-box;
+}
+.page-header-text {
+  overflow-wrap: break-word;
+  /* font-family: ; */
+  font-weight: 700;
+  font-size: 15px;
+  color: #000000;
+  margin-left: 20px;
+}
+
+.bank-info-header {
+  border-radius: 10px;
+  background: #000000;
+  position: relative;
+  margin-bottom: 43px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+.bank-info-block {
+  background: transparent;
+  display: flex;
+  padding: 5px;
+}
+.bank-img {
+  border-radius: 50%;
+  background: #d9d9d9;
+  margin-right: 15px;
+  width: 74px;
+  height: 74px;
+  /* padding:; */
+  overflow: hidden;
+}
+.bank-img img {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+.bank-name {
+  margin: 29px 0 21px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  /* font-family:; */
+  font-weight: 700;
+  font-size: 20px;
+  color: #88c437;
+}
+.other-bank-details {
+  margin: 10px 10px 0 20px;
+  display: block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  /* font-family:; */
+  font-weight: 700;
+  font-size: 15px;
+  color: #d9d9d9;
+}
+.view-available-accounts {
+  overflow-wrap: break-word;
+  /* font-family: ; */
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.rectangle-10 {
+  border-radius: 0 0 10px 0;
+  background: rgba(217, 217, 217, 0.57);
+  align-self: flex-end;
+  width: 8px;
+  height: 20px;
+}
+.rectangle-11 {
+  border-radius: 0 10px 0 0;
+  background: rgba(217, 217, 217, 0.57);
+  margin-bottom: 7px;
+  align-self: flex-end;
+  width: 52px;
+  height: 3px;
+}
+
+.view-available-accounts {
+  border-radius: 10px;
+  background: #88c437;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 11px 1px 11px 0;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+/*********************Account Page**************************/
+
+.account-page {
+  background: #ffffff;
+  /* position:; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 73px 16px 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  /* display:; */
+  overflow: hidden;
+}
+.account-card {
+  border-radius: 10px;
+  background: #d9d9d9;
+  position: relative;
+  margin: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 13px 0 14px 14.9px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+.account-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+.account-number {
+}
+
+/*******************selected-acccount-page***********************/
+
+.selected-account-page {
+  background: #ffffff;
+  /* position:; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 73px 16px 0;
+  flex-grow: 1;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  /* font-family:; */
+  /* display:; */
+  overflow: hidden;
+}
+.selected-account-info-header {
+  background: #000000;
+  width: 100%;
+  max-width: 500px;
+  /* height: ; */
+  min-height: 100px;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px 0 10px 15px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.selected-account-name {
+  color: #88c437;
+  font-size: 20px;
+  font-weight: bold;
+}
+.selected-account-number {
+  color: #ffffff;
+}

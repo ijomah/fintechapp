@@ -9,6 +9,9 @@ function onDeviceReady() {
   document.getElementById("btnget").addEventListener("click", getData);
 }
 
+document.getElementById("button1").addEventListener("click", signin);
+document.getElementById("btnget").addEventListener("click", getData);
+
 var token;
 
 function printhello() {
@@ -30,7 +33,7 @@ function signin() {
     contentType:"application/json; charset=utf-8",
     beforeSend: function(xhr) {
       xhr.setRequestHeader("Authorization",
-    'DirectLogin username="197802tosinalo",password="2b78e8", consumer_key="ndlpn2l4h4e4pcw5vpyiqmkxwsbtbk0r3dvsrfng"');
+    'DirectLogin username="197802tosinalo",password="Computer1234$", consumer_key="ndlpn2l4h4e4pcw5vpyiqmkxwsbtbk0r3dvsrfng"');
 
     },
     success: function( data, textStatus, jQxhr ){
@@ -48,7 +51,7 @@ function signin() {
 
 //get req
 function getData() {
-  console.log("in function signin");
+  console.log("in function getData");
   // document.getElementById("infobox").innerHTML = "Data Received";
 
   $.ajax({
@@ -73,3 +76,22 @@ function getData() {
     }
   });
 }
+
+// for all anchor tags
+// Define a click binding for all anchors in the page
+$( "a" ).on( "click", function( event ) {
+
+	// Prevent the usual navigation behavior
+	event.preventDefault();
+
+	// Alter the url according to the anchor's href attribute, and
+	// store the data-foo attribute information with the url
+	$.mobile.navigate( $(this).attr( "href" ), {
+		foo: $(this).attr("data-foo")
+	});
+
+	// Hypothetical content alteration based on the url. E.g, make
+	// an Ajax request for JSON data and render a template into the page.
+	// alterContent( $(this).attr("href") );
+  
+});
