@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <title>Banker App</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="transition.css">
+    <!-- <link rel="stylesheet" href="index2.css"> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://code.jquery.com https://ssl.gstatic.com https://apisandbox.openbankproject.com 'unsafe-eval'; style-src 'self' code.jquery.com 'unsafe-inline'; media-src *; script-src 'self' 'unsafe-inline'; img-src 'self' code.jquery.com data: content:;"> -->
+
+
+</head>
+
+<body>
+    <!-- Home screen -->
+    <div data-role="page" class="page first-home-screen">
+        <div class="bg-img-container">
+            <button ui-icon-arrow-1>
+                <a href="#signin">Next</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sign in page -->
+    <div data-role="page" id="signin" class="page">
+        <div class="lets-get-you-inside">
+            ...Let’s get you inside
+        </div>
+        <div class="sign-in-name-container">
+            <input type="text" class="sign-in-name" placeholder="Username" />
+        </div>
+        <div class="sign-in-password-container">
+            <input type="password" class="sign-in-password" placeholder="Password" />
+        </div>
+        <div class="login-container ui-body">
+            <a href="#" class="login" data-role="button">Login</a>
+        </div>
+        <div class="login-error-container ui-screen-hidden">
+            <span class="login-error">
+                error
+            </span>
+        </div>
+    </div>
+
+    <!-- Bank list page -->
+    <div data-role="page" id="banklist" class="page">
+        <div class="container-select-bank">
+            <div class="select-bank">
+                <input type="search" name="search-1" id="search-1" placeholder="Select Bank" value="">
+            </div>
+            <div class="next-container">
+                <a href="#bankpage" class="next ui-btn ui-corner-all ui-mini" data-role="button">Next</a>
+            </div>
+        </div>
+        <div class="aval-banks">Available Banks <span class="no-of-bank-found">0</span></div>
+        <div class="available-banks ui-grid-a">
+
+        </div>
+
+    </div>
+
+    <!-- Bank Page -->
+    <div data-role="page" id="bankpage" class="page">
+        <div class="page-header">
+            <b>&#213</b>
+            <span class="page-header-text">
+                Name of Selected Bank
+            </span>
+        </div>
+        <div class="bank-info-header">
+            <div class="rectangle-11">
+            </div>
+            <div class="bank-info-block">
+                <div class="bank-img">
+                    <img src="#" />
+                </div>
+                <div class="bank-name">
+                    Bank Name
+                </div>
+            </div>
+            <div class="other-bank-details">
+                Other bank details
+            </div>
+            <div class="rectangle-10">
+            </div>
+        </div>
+        <div class="view-available-accounts">
+            View available accounts
+        </div>
+    </div>
+
+    <!-- Account List Page -->
+    <div data-role="page" id="accountpage" class="page">
+        <div class="page-header">
+            <b>&#213</b>
+            <span class="page-header-text">
+                Available Accounts
+            </span>
+        </div>
+        <div class="account-card">
+            <div class="account-name">Account name</div>
+            <div class="account-number">00011223344</div>
+        </div>
+    </div>
+
+    <!-- Selected Account Page -->
+    <div data-role="page" id="selectedaccount" class="page">
+        <div class="page-header">
+            <b>&#215</b>
+            <span class="page-header-text">
+                [Selected Account Name]
+            </span>
+        </div>
+        <div class="selected-account-info-header">
+            <div class="selected-account-name">
+                Account Name
+            </div>
+            <div class="selected-account-number">
+                0001122333
+            </div>
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
